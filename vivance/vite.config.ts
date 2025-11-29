@@ -1,30 +1,23 @@
+import {
+  vitePlugin as remix,
+  cloudflareDevProxyVitePlugin as remixCloudflareDevProxy,
+} from "@remix-run/dev";
 import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
 import tailwindcss from "@tailwindcss/vite";
-import { copyFileSync } from "fs";
-import { join } from "path";
+import tsconfigPaths from "vite-tsconfig-paths";
 
 export default defineConfig({
   plugins: [
-    react(),
-    tailwindcss(),
-    {
-      name: "copy-redirects",
-      closeBundle() {
-        // Copy _redirects to build output after build
-        try {
-          copyFileSync(
-            join(process.cwd(), "public", "_redirects"),
-            join(process.cwd(), "build", "client", "_redirects")
-          );
-        } catch (err) {
-          // File might not exist, that's okay
-        }
+    remixCloudflareDevProxy(),
+    remix({
+      ignoredRouteFiles: ["**/.*", "**/*.css", "**/*.test.*", "**/*.spec.*"],
+      future: {
+        v3_fetcherPersist: true,
+        v3_relativeSplatPath: true,
+        v3_throwAbortReason: true,
       },
-    },
+    }),
+    tailwindcss(),
+    tsconfigPaths(),
   ],
-  build: {
-    outDir: "build/client",
-    emptyOutDir: true,
-  },
 });
