@@ -44,6 +44,7 @@ const RAW_RUNTIME_STATE =
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:24e0d0bd90999e93d99123e074caa84751dc1f1b9e0b044286a9013821ba507a035d065755d7fe709095cf4c753439c8291aceaaa8e51bf949fec54de595c642#npm:18.3.1"],\
           ["tailwindcss", "npm:4.1.17"],\
+          ["tsc", "npm:2.0.4"],\
           ["typescript", "patch:typescript@npm%3A5.9.3#optional!builtin<compat/typescript>::version=5.9.3&hash=5786d5"],\
           ["vite", "virtual:24e0d0bd90999e93d99123e074caa84751dc1f1b9e0b044286a9013821ba507a035d065755d7fe709095cf4c753439c8291aceaaa8e51bf949fec54de595c642#npm:7.2.4"],\
           ["vivance", "workspace:."]\
@@ -3762,6 +3763,15 @@ const RAW_RUNTIME_STATE =
         "linkType": "HARD"\
       }]\
     ]],\
+    ["tsc", [\
+      ["npm:2.0.4", {\
+        "packageLocation": "../../../../.yarn/berry/cache/tsc-npm-2.0.4-e331b066cb-10c0.zip/node_modules/tsc/",\
+        "packageDependencies": [\
+          ["tsc", "npm:2.0.4"]\
+        ],\
+        "linkType": "HARD"\
+      }]\
+    ]],\
     ["tslib", [\
       ["npm:2.8.1", {\
         "packageLocation": "../../../../.yarn/berry/cache/tslib-npm-2.8.1-66590b21b8-10c0.zip/node_modules/tslib/",\
@@ -3940,6 +3950,7 @@ const RAW_RUNTIME_STATE =
           ["react", "npm:18.3.1"],\
           ["react-dom", "virtual:24e0d0bd90999e93d99123e074caa84751dc1f1b9e0b044286a9013821ba507a035d065755d7fe709095cf4c753439c8291aceaaa8e51bf949fec54de595c642#npm:18.3.1"],\
           ["tailwindcss", "npm:4.1.17"],\
+          ["tsc", "npm:2.0.4"],\
           ["typescript", "patch:typescript@npm%3A5.9.3#optional!builtin<compat/typescript>::version=5.9.3&hash=5786d5"],\
           ["vite", "virtual:24e0d0bd90999e93d99123e074caa84751dc1f1b9e0b044286a9013821ba507a035d065755d7fe709095cf4c753439c8291aceaaa8e51bf949fec54de595c642#npm:7.2.4"],\
           ["vivance", "workspace:."]\
