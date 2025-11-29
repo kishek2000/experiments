@@ -1,8 +1,19 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import "tailwindcss";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@theme {
+  --color-vivance-blue: #0a3560;
+  --color-vivance-blue-light: #1a5080;
+  --color-vivance-blue-dark: #062440;
+  --color-vivance-orange: #fc6603;
+  --color-vivance-orange-light: #ff8533;
+  --color-vivance-orange-dark: #d95500;
+  --color-vivance-yellow: #ffd019;
+  --color-vivance-red: #ff1f25;
+  --color-vivance-green: #16c96f;
+  --color-vivance-lime: #c0fc1c;
+  --color-vivance-peach: #fd944e;
+}
 
 * {
   margin: 0;
@@ -11,7 +22,7 @@
 }
 
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -21,16 +32,16 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: #F3F4F6;
+  background: #f3f4f6;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #0A3560;
+  background: #0a3560;
   border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #1A5080;
+  background: #1a5080;
 }
 
 html {
