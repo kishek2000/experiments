@@ -1,0 +1,13 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Orange Background -->
+  <rect width="512" height="512" rx="80" fill="#FC6603" />
+
+  <!-- White VT Text -->
+  <text x="256" y="320" text-anchor="middle" font-family="Roboto, sans-serif" font-weight="900" font-size="200"
+    fill="white">VT</text>
+
+  <!-- Small plane icon -->
+  <g transform="translate(200, 180) scale(0.5)">
+    <path d="M 100 100 L 240 140 L 100 180 L 100 220 L 260 180 L 260 140 L 100 100 Z" fill="white" opacity="0.3" />
+  </g>
+</svg>

@@ -1,0 +1,10 @@
+<svg width="200" height="60" viewBox="0 0 200 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Logo Icon -->
+  <rect x="5" y="10" width="40" height="40" rx="8" fill="#FC6603" />
+
+  <!-- VT Text in Icon -->
+  <text x="25" y="37" text-anchor="middle" font-family="Roboto" font-weight="700" font-size="20" fill="white">VT</text>
+
+  <!-- Vivance Travels Text -->
+  <text x="55" y="38" font-family="Roboto" font-weight="700" font-size="24" fill="#FC6603">Vivance Travels</text>
+</svg>

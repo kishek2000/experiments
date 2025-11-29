@@ -1,49 +1,24 @@
-@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 @import "tailwindcss";
 
 @theme {
-  --color-vivance-blue: #0a3560;
-  --color-vivance-blue-light: #1a5080;
-  --color-vivance-blue-dark: #062440;
-  --color-vivance-orange: #fc6603;
-  --color-vivance-orange-light: #ff8533;
-  --color-vivance-orange-dark: #d95500;
-  --color-vivance-yellow: #ffd019;
-  --color-vivance-red: #ff1f25;
-  --color-vivance-green: #16c96f;
-  --color-vivance-lime: #c0fc1c;
-  --color-vivance-peach: #fd944e;
+  --font-sans: "Roboto", ui-sans-serif, system-ui, sans-serif;
+  
+  /* Vivance Brand Colors */
+  --color-primary: #fc6603;
+  --color-primary-dark: #c84e02;
+  --color-secondary: #043560;
+  --color-secondary-dark: #021c2e;
+}
+
+html,
+body {
+  font-family: "Roboto", sans-serif;
+  scroll-behavior: smooth;
+  margin: 0;
+  padding: 0;
 }
 
 * {
-  margin: 0;
-  padding: 0;
   box-sizing: border-box;
 }
 
-body {
-  font-family: "Roboto", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-}
-
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: #f3f4f6;
-}
-
-::-webkit-scrollbar-thumb {
-  background: #0a3560;
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: #1a5080;
-}
-
-html {
-  scroll-behavior: smooth;
-}
