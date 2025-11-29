@@ -1,5 +1,5 @@
-import type { Route } from "./+types/package.$id";
-import { Link } from "react-router";
+import type { MetaFunction } from "@remix-run/node";
+import { Link, useParams } from "@remix-run/react";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
 import {
@@ -15,7 +15,7 @@ import {
   Heart,
 } from "lucide-react";
 
-export function meta({ params }: Route.MetaArgs) {
+export const meta: MetaFunction = () => {
   return [
     { title: `Package Details - Vivance Travels` },
     {
@@ -23,7 +23,7 @@ export function meta({ params }: Route.MetaArgs) {
       content: "Explore package details and book your perfect vacation",
     },
   ];
-}
+};
 
 // Mock data - in real app, fetch based on params.id
 const packageData = {
@@ -76,7 +76,8 @@ const packageData = {
   ],
 };
 
-export default function PackageDetail({ params }: Route.ComponentProps) {
+export default function PackageDetail() {
+  const params = useParams();
   return (
     <div className="min-h-screen flex flex-col bg-gray-50">
       <Header />

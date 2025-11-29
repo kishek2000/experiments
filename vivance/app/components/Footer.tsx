@@ -1,4 +1,4 @@
-import { Link } from "react-router";
+import { Link } from "@remix-run/react";
 import { Phone, Mail, Building2 } from "lucide-react";
 
 export function Footer() {

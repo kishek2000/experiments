@@ -1,5 +1,5 @@
-import type { Route } from "./+types/destinations";
-import { Link } from "react-router";
+import type { MetaFunction } from "@remix-run/node";
+import { Link } from "@remix-run/react";
 import { motion } from "framer-motion";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
@@ -12,7 +12,7 @@ import {
   Star,
 } from "lucide-react";
 
-export function meta({}: Route.MetaArgs) {
+export const meta: MetaFunction = () => {
   return [
     { title: "Explore Destinations - Vivance Travels" },
     {
@@ -21,7 +21,7 @@ export function meta({}: Route.MetaArgs) {
         "Discover amazing destinations around the world with authentic local experiences",
     },
   ];
-}
+};
 
 const destinations = [
   {

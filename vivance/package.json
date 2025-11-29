@@ -1,41 +1,46 @@
 {
   "name": "vivance",
   "private": true,
+  "sideEffects": false,
   "type": "module",
   "scripts": {
-    "build": "react-router build",
-    "dev": "react-router dev",
+    "build": "remix vite:build",
+    "dev": "remix vite:dev",
+    "deploy:staging": "remix vite:build --sourcemapClient --sourcemapServer --mode staging && wrangler pages deploy ./build/client --project-name vivance-staging",
+    "deploy:production": "remix vite:build --sourcemapClient --sourcemapServer --mode production && wrangler pages deploy ./build/client --project-name vivance",
     "start": "wrangler pages dev ./build/client",
-    "deploy": "react-router build --sourcemapClient --sourcemapServer && wrangler pages deploy ./build/client --project-name vivance",
-    "typecheck": "react-router typegen && tsc"
+    "typecheck": "tsc"
   },
   "dependencies": {
-    "@react-router/cloudflare": "^7.9.2",
-    "@react-router/node": "^7.9.2",
-    "@react-router/serve": "^7.9.2",
+    "@remix-run/cloudflare": "*",
+    "@remix-run/cloudflare-pages": "*",
+    "@remix-run/node": "^2.16.0",
+    "@remix-run/react": "^2.17.2",
+    "@remix-run/serve": "^2.16.0",
     "framer-motion": "^12.23.24",
-    "isbot": "^5.1.31",
-    "lucide-react": "^0.468.0",
-    "react": "^19.1.1",
-    "react-dom": "^19.1.1",
-    "react-router": "^7.9.2"
+    "isbot": "^4.1.0",
+    "lucide-react": "^0.479.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "@cloudflare/workers-types": "^4.20250110.0",
-    "@react-router/dev": "^7.9.2",
+    "@remix-run/dev": "^2.16.0",
     "@tailwindcss/vite": "^4.1.13",
-    "@types/node": "^22",
-    "@types/react": "^19.1.13",
-    "@types/react-dom": "^19.1.9",
+    "@types/react": "^18.2.20",
+    "@types/react-dom": "^18.2.7",
+    "@vitejs/plugin-react": "^4.2.1",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
     "tailwindcss": "^4.1.13",
-    "typescript": "^5.9.2",
-    "vite": "^7.1.7",
-    "vite-tsconfig-paths": "^5.1.4",
+    "typescript": "^5.7.2",
+    "vite": "^6.0.0",
+    "vite-tsconfig-paths": "^4.2.1",
     "wrangler": "^3.103.0"
   },
   "engines": {
     "node": ">=22.16.0",
     "yarn": ">=4.9.1"
   },
-  "packageManager": "yarn@4.12.0"
+  "packageManager": "yarn@4.9.1"
 }
