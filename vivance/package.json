@@ -5,8 +5,8 @@
   "scripts": {
     "build": "react-router build",
     "dev": "react-router dev",
-    "preview": "wrangler pages dev ./build/client",
-    "deploy": "npm run build && wrangler pages deploy ./build/client",
+    "start": "wrangler pages dev ./build/client",
+    "deploy": "react-router build --sourcemapClient --sourcemapServer && wrangler pages deploy ./build/client --project-name vivance",
     "typecheck": "react-router typegen && tsc"
   },
   "dependencies": {
@@ -32,5 +32,10 @@
     "vite": "^7.1.7",
     "vite-tsconfig-paths": "^5.1.4",
     "wrangler": "^3.103.0"
-  }
+  },
+  "engines": {
+    "node": ">=22.16.0",
+    "yarn": ">=4.9.1"
+  },
+  "packageManager": "yarn@4.12.0"
 }
