@@ -40,13 +40,14 @@ export function Footer() {
                 href="#"
                 className="flex items-center gap-2 text-gray-300 hover:text-[#FC6603] transition-colors"
               >
-                <MapPin className="w-4 h-4" />
+                <Building2 className="w-4 h-4" />
                 <span>About us</span>
               </a>
               <a
                 href="#"
                 className="flex items-center gap-2 text-gray-300 hover:text-[#FC6603] transition-colors"
               >
+                <Mail className="w-4 h-4" />
                 <span>Contact us</span>
               </a>
             </div>
@@ -195,16 +196,9 @@ export function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 border-t border-white/10">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex items-center gap-4">
-              <img
-                src="https://www.iatatravelcentre.com/sites/default/files/iata-logo.png"
-                alt="IATA"
-                className="h-12 opacity-80"
-              />
-              <p className="text-sm text-gray-400">
-                © 2025 Vivance Travels. All rights reserved.
-              </p>
-            </div>
+            <p className="text-sm text-gray-400">
+              © 2025 Vivance Travels. All rights reserved.
+            </p>
             <div className="text-sm text-gray-400">
               <span>24/7 Customer Support Available</span>
             </div>
