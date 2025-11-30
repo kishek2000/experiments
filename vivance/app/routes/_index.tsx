@@ -16,6 +16,8 @@ import {
   Heart,
   Award,
   Phone,
+  Globe,
+  Package,
 } from "lucide-react";
 import { Header } from "../components/Header";
 import { Footer } from "../components/Footer";
@@ -586,105 +588,93 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Trust Values Section */}
-      <section className="py-24 relative overflow-hidden">
-        {/* Subtle pattern background */}
-        <div className="absolute inset-0 bg-gradient-to-b from-white via-orange-50/20 to-white" />
-        <div
-          className="absolute inset-0 opacity-[0.02]"
-          style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23FC6603' fill-opacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
-          }}
-        />
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Popular Destinations Preview */}
+      <section className="py-24 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-orange-100 to-orange-50 text-[#FC6603] px-5 py-2.5 rounded-full mb-6 font-bold border border-orange-200">
-              <Sparkles className="w-5 h-5" />
-              <span className="tracking-wide">Handpicked for You</span>
+            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-blue-50 to-blue-100 text-[#043560] px-5 py-2.5 rounded-full mb-6 font-bold border border-blue-200">
+              <Globe className="w-5 h-5" />
+              <span className="tracking-wide">Explore the World</span>
             </div>
             <h2 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-              <span className="text-gray-900">Experiences That </span>
-              <span className="text-[#FC6603]">Transform</span>
+              <span className="text-gray-900">Popular </span>
+              <span className="text-[#FC6603]">Destinations</span>
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-              Each journey is crafted with care, local expertise, and a deep
-              commitment to authentic cultural immersion
+              From sacred temples to modern marvels, discover destinations that
+              inspire and transform
             </p>
           </motion.div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-12">
-            {featuredPackages.map((pkg, idx) => (
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-12">
+            {[
+              {
+                name: "Dubai",
+                country: "UAE",
+                region: "Middle East",
+                image:
+                  "https://images.unsplash.com/photo-1518684079-3c830dcef090?w=600&q=80",
+                packages: 45,
+              },
+              {
+                name: "Bali",
+                country: "Indonesia",
+                region: "Southeast Asia",
+                image:
+                  "https://images.unsplash.com/photo-1559827260-dc66d52bef19?w=600&q=80",
+                packages: 38,
+              },
+              {
+                name: "Maldives",
+                country: "Maldives",
+                region: "South Asia",
+                image:
+                  "https://images.unsplash.com/photo-1514282401047-d79a71a590e8?w=600&q=80",
+                packages: 52,
+              },
+              {
+                name: "Paris",
+                country: "France",
+                region: "Europe",
+                image:
+                  "https://images.unsplash.com/photo-1502602898657-3e91760cbb34?w=600&q=80",
+                packages: 67,
+              },
+            ].map((dest, idx) => (
               <motion.div
-                key={pkg.id}
+                key={idx}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: idx * 0.1 }}
               >
                 <Link
-                  to={`/packages/${pkg.id}`}
-                  className="group block bg-white rounded-3xl shadow-lg hover:shadow-[0_20px_60px_-15px_rgba(252,102,3,0.3)] transition-all duration-500 overflow-hidden border border-gray-100 hover:border-orange-300"
+                  to="/destinations"
+                  className="group block relative h-80 rounded-3xl overflow-hidden shadow-lg hover:shadow-[0_20px_60px_-15px_rgba(252,102,3,0.3)] transition-all duration-500"
                 >
-                  <div className="relative h-72 overflow-hidden">
-                    <div
-                      className="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-700"
-                      style={{ backgroundImage: `url(${pkg.image})` }}
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-
-                    <div className="absolute top-4 left-4">
-                      <span className="inline-block bg-[#FC6603] text-white text-xs font-bold px-4 py-2 rounded-full shadow-lg">
-                        {pkg.tag}
-                      </span>
-                    </div>
-
-                    <div className="absolute top-4 right-4 bg-white/95 backdrop-blur px-3 py-2 rounded-full flex items-center gap-1 shadow-lg">
-                      <Star className="w-4 h-4 fill-[#FC6603] text-[#FC6603]" />
-                      <span className="text-sm font-bold text-gray-900">
-                        {pkg.rating}
-                      </span>
-                      <span className="text-xs text-gray-600">
-                        ({pkg.reviews})
-                      </span>
-                    </div>
-
-                    <div className="absolute bottom-4 left-4 right-4">
-                      <h3 className="text-2xl font-bold text-white mb-2 line-clamp-2">
-                        {pkg.title}
-                      </h3>
-                      <p className="text-gray-200 text-sm flex items-center gap-1">
-                        <MapPin className="w-4 h-4" />
-                        {pkg.location}
-                      </p>
-                    </div>
+                  <div
+                    className="absolute inset-0 bg-cover bg-center transform group-hover:scale-110 transition-transform duration-700"
+                    style={{ backgroundImage: `url(${dest.image})` }}
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                  <div className="absolute top-4 right-4 bg-white/95 backdrop-blur px-3 py-1.5 rounded-full">
+                    <span className="text-xs font-bold text-gray-900">
+                      {dest.region}
+                    </span>
                   </div>
-
-                  <div className="p-6">
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="text-sm text-gray-600 font-medium">
-                        {pkg.nights}N / {pkg.days}D
+                  <div className="absolute bottom-0 left-0 right-0 p-6 text-white">
+                    <h3 className="text-2xl font-bold mb-1">{dest.name}</h3>
+                    <p className="text-sm text-gray-200 mb-3">{dest.country}</p>
+                    <div className="flex items-center gap-2 text-sm">
+                      <Package className="w-4 h-4 text-[#FC6603]" />
+                      <span className="font-medium">
+                        {dest.packages} packages
                       </span>
-                    </div>
-
-                    <div className="flex items-end justify-between">
-                      <div>
-                        <p className="text-sm text-gray-600 mb-1">
-                          Starting from
-                        </p>
-                        <p className="text-3xl font-bold text-[#FC6603]">
-                          ₹{pkg.price.toLocaleString()}
-                        </p>
-                      </div>
-                      <div className="flex items-center gap-2 text-[#FC6603] font-bold group-hover:gap-3 transition-all">
-                        <span>Explore</span>
-                        <ArrowRight className="w-5 h-5" />
-                      </div>
                     </div>
                   </div>
                 </Link>
@@ -694,11 +684,11 @@ export default function Home() {
 
           <div className="text-center">
             <Link
-              to="/packages"
-              className="group inline-flex items-center gap-3 bg-gradient-to-r from-[#FC6603] to-[#ff7a1a] hover:from-[#e55a02] hover:to-[#FC6603] text-white font-bold px-10 py-5 rounded-full transition-all shadow-xl shadow-orange-500/30 hover:shadow-2xl hover:shadow-orange-500/50 hover:scale-105"
+              to="/destinations"
+              className="inline-flex items-center gap-3 border-2 border-[#043560] text-[#043560] hover:bg-[#043560] hover:text-white font-bold px-10 py-5 rounded-full transition-all"
             >
-              <span className="text-lg">View All Experiences</span>
-              <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              <span className="text-lg">View All Destinations</span>
+              <ArrowRight className="w-5 h-5" />
             </Link>
           </div>
         </div>
