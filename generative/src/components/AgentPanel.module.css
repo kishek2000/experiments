@@ -1,0 +1,316 @@
+.panel {
+  width: 320px;
+  height: 100%;
+  background: var(--ds-surface);
+  border-left: 1px solid var(--ds-border);
+  display: flex;
+  flex-direction: column;
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  padding: var(--ds-space-200);
+  background: linear-gradient(135deg, var(--ds-surface) 0%, var(--ds-surface-sunken) 100%);
+  border-bottom: 1px solid var(--ds-border);
+}
+
+.headerContent {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--ds-space-150);
+}
+
+.headerIcon {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #0052CC 0%, #6554C0 100%);
+  border-radius: var(--ds-radius-100);
+  color: white;
+  flex-shrink: 0;
+}
+
+.headerTitle {
+  font-size: 16px;
+  font-weight: 700;
+  color: var(--ds-text);
+  margin: 0;
+}
+
+.headerSubtitle {
+  font-size: 12px;
+  color: var(--ds-text-subtlest);
+  margin: var(--ds-space-025) 0 0;
+}
+
+.closeButton {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-radius: var(--ds-radius-100);
+  color: var(--ds-icon);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.closeButton:hover {
+  background: var(--ds-surface-hovered);
+  color: var(--ds-text);
+}
+
+.content {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--ds-space-200);
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-200);
+}
+
+/* Agent List */
+.agentList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-100);
+}
+
+.agentCard {
+  background: var(--ds-surface);
+  border: 1px solid var(--ds-border);
+  border-radius: var(--ds-radius-200);
+  overflow: hidden;
+  transition: border-color 0.15s, box-shadow 0.15s;
+}
+
+.agentCard:hover {
+  border-color: var(--ds-border-bold);
+}
+
+.agentHeader {
+  width: 100%;
+  display: flex;
+  align-items: flex-start;
+  gap: var(--ds-space-150);
+  padding: var(--ds-space-150);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  text-align: left;
+}
+
+.agentIcon {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--ds-radius-100);
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.agentInfo {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-025);
+  min-width: 0;
+}
+
+.agentNameRow {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-100);
+}
+
+.agentName {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ds-text);
+}
+
+.activeBadge {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  background: var(--ds-background-success);
+  border-radius: var(--ds-radius-100);
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--ds-text-success);
+}
+
+.activeDot {
+  width: 6px;
+  height: 6px;
+  background: var(--ds-icon-success);
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.6; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1.2); }
+}
+
+.agentDesc {
+  font-size: 12px;
+  color: var(--ds-text-subtle);
+  line-height: 1.4;
+}
+
+.chevron {
+  color: var(--ds-icon-subtle);
+  transition: transform 0.2s;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.chevron.rotated {
+  transform: rotate(180deg);
+}
+
+/* Agent Details */
+.agentDetails {
+  padding: 0 var(--ds-space-150) var(--ds-space-150);
+  overflow: hidden;
+}
+
+.capabilities {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--ds-space-075);
+  margin-bottom: var(--ds-space-150);
+}
+
+.capabilityTag {
+  padding: var(--ds-space-050) var(--ds-space-100);
+  background: var(--ds-background-neutral);
+  border-radius: var(--ds-radius-050);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--ds-text-subtle);
+}
+
+.toggleButton {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--ds-space-075);
+  padding: var(--ds-space-100);
+  background: var(--ds-surface-sunken);
+  border: 1px solid var(--ds-border);
+  border-radius: var(--ds-radius-100);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ds-text-subtle);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.toggleButton:hover {
+  background: var(--ds-surface-hovered);
+  color: var(--ds-text);
+}
+
+.toggleButton.activeToggle {
+  background: var(--ds-background-success);
+  border-color: var(--ds-border-success);
+  color: var(--ds-text-success);
+}
+
+/* Activity Section */
+.activitySection {
+  background: var(--ds-surface-sunken);
+  border-radius: var(--ds-radius-200);
+  padding: var(--ds-space-150);
+}
+
+.activityHeader {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-075);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--ds-text-subtle);
+  margin-bottom: var(--ds-space-150);
+}
+
+.activityList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-125);
+}
+
+.activityItem {
+  display: flex;
+  gap: var(--ds-space-100);
+}
+
+.activityDot {
+  width: 8px;
+  height: 8px;
+  background: linear-gradient(135deg, #0052CC 0%, #6554C0 100%);
+  border-radius: 50%;
+  margin-top: 5px;
+  flex-shrink: 0;
+}
+
+.activityContent {
+  flex: 1;
+  min-width: 0;
+}
+
+.activityText {
+  font-size: 13px;
+  color: var(--ds-text);
+  line-height: 1.4;
+  margin: 0 0 var(--ds-space-025);
+}
+
+.activityTime {
+  font-size: 11px;
+  color: var(--ds-text-subtlest);
+}
+
+/* Quick Actions */
+.quickActions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-075);
+  margin-top: auto;
+  padding-top: var(--ds-space-150);
+  border-top: 1px solid var(--ds-border);
+}
+
+.quickAction {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-100);
+  padding: var(--ds-space-125) var(--ds-space-150);
+  background: linear-gradient(135deg, rgba(0, 82, 204, 0.08) 0%, rgba(101, 84, 192, 0.08) 100%);
+  border: 1px solid var(--ds-border);
+  border-radius: var(--ds-radius-100);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ds-text-brand);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.quickAction:hover {
+  background: linear-gradient(135deg, rgba(0, 82, 204, 0.15) 0%, rgba(101, 84, 192, 0.15) 100%);
+  border-color: var(--ds-border-brand);
+}

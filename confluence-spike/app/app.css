@@ -1,0 +1,581 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu",
+    "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+}
+
+/* Modern Confluence Dark Theme Colors */
+:root {
+  /* Dark mode background colors */
+  --ds-background-neutral: #1d2125;
+  --ds-background-subtle: #22272b;
+  --ds-background-default: #161a1d;
+  --ds-background-sunken: #0c0e11;
+  
+  /* Text colors */
+  --ds-text: #b3bac5;
+  --ds-text-subtle: #8c9cb8;
+  --ds-text-subtlest: #6b778c;
+  --ds-text-inverse: #ffffff;
+  
+  /* Border colors */
+  --ds-border: #38414a;
+  --ds-border-bold: #454f59;
+  --ds-border-focus: #0c66e4;
+  
+  /* Interactive colors */
+  --ds-background-selected: #1c2b41;
+  --ds-background-hover: #22272b;
+  --ds-background-pressed: #2c333a;
+  
+  /* Brand colors */
+  --ds-blue: #0c66e4;
+  --ds-blue-hover: #0055cc;
+  --ds-blue-pressed: #09326c;
+  --ds-blue-bg: #0c66e41a;
+  
+  /* Status colors */
+  --ds-green: #22c55e;
+  --ds-yellow: #f5cd47;
+  --ds-red: #f87171;
+  --ds-purple: #8b5cf6;
+  
+  /* Spacing */
+  --ds-space-100: 8px;
+  --ds-space-150: 12px;
+  --ds-space-200: 16px;
+  --ds-space-250: 20px;
+  --ds-space-300: 24px;
+  --ds-space-400: 32px;
+  --ds-space-500: 40px;
+  
+  /* Border radius */
+  --ds-radius-100: 3px;
+  --ds-radius-200: 4px;
+  --ds-radius-300: 6px;
+  --ds-radius-400: 8px;
+}
+
+body {
+  background: var(--ds-background-default);
+  color: var(--ds-text);
+  overflow: hidden;
+}
+
+/* Confluence Layout */
+.confluence-layout {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Left Sidebar */
+.confluence-sidebar {
+  width: 256px;
+  background: var(--ds-background-neutral);
+  border-right: 1px solid var(--ds-border);
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.confluence-sidebar-header {
+  padding: var(--ds-space-200);
+  border-bottom: 1px solid var(--ds-border);
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-150);
+}
+
+.confluence-logo {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-100);
+  color: var(--ds-text-inverse);
+  font-weight: 600;
+  font-size: 16px;
+}
+
+.confluence-logo svg {
+  width: 24px;
+  height: 24px;
+}
+
+.confluence-search {
+  padding: var(--ds-space-100) var(--ds-space-200);
+  border-bottom: 1px solid var(--ds-border);
+}
+
+.confluence-search input {
+  width: 100%;
+  padding: 6px 8px;
+  background: var(--ds-background-subtle);
+  border: 1px solid var(--ds-border);
+  border-radius: var(--ds-radius-200);
+  color: var(--ds-text);
+  font-size: 14px;
+  outline: none;
+}
+
+.confluence-search input:focus {
+  border-color: var(--ds-border-focus);
+  background: var(--ds-background-default);
+}
+
+.confluence-search input::placeholder {
+  color: var(--ds-text-subtlest);
+}
+
+.confluence-nav {
+  flex: 1;
+  padding: var(--ds-space-100) 0;
+  overflow-y: auto;
+}
+
+.confluence-nav-item {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-100);
+  padding: 8px var(--ds-space-200);
+  color: var(--ds-text);
+  font-size: 14px;
+  text-decoration: none;
+  border: none;
+  background: none;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  transition: background 0.1s ease;
+}
+
+.confluence-nav-item:hover {
+  background: var(--ds-background-hover);
+  color: var(--ds-text-inverse);
+}
+
+.confluence-nav-item.active {
+  background: var(--ds-background-selected);
+  color: var(--ds-text-inverse);
+}
+
+.confluence-nav-item svg {
+  width: 16px;
+  height: 16px;
+  flex-shrink: 0;
+  opacity: 0.8;
+}
+
+.confluence-nav-section {
+  padding: var(--ds-space-100) var(--ds-space-200);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--ds-text-subtlest);
+  letter-spacing: 0.5px;
+  margin-top: var(--ds-space-200);
+}
+
+.confluence-nav-section:first-child {
+  margin-top: 0;
+}
+
+.confluence-user-profile {
+  padding: var(--ds-space-200);
+  border-top: 1px solid var(--ds-border);
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-100);
+}
+
+.confluence-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0c66e4, #1d7afc);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 600;
+  font-size: 12px;
+  flex-shrink: 0;
+}
+
+/* Main Content Area */
+.confluence-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  background: var(--ds-background-default);
+}
+
+.confluence-header {
+  height: 56px;
+  background: var(--ds-background-neutral);
+  border-bottom: 1px solid var(--ds-border);
+  display: flex;
+  align-items: center;
+  padding: 0 var(--ds-space-200);
+  gap: var(--ds-space-200);
+}
+
+.confluence-header-search {
+  flex: 1;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+.confluence-header-search input {
+  width: 100%;
+  padding: 8px 12px 8px 36px;
+  background: var(--ds-background-subtle);
+  border: 1px solid var(--ds-border);
+  border-radius: var(--ds-radius-200);
+  color: var(--ds-text);
+  font-size: 14px;
+  outline: none;
+  transition: all 0.15s ease;
+}
+
+.confluence-header-search input:focus {
+  border-color: var(--ds-border-focus);
+  background: var(--ds-background-default);
+  box-shadow: 0 0 0 1px var(--ds-border-focus);
+}
+
+.confluence-header-actions {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-100);
+}
+
+.confluence-header-button {
+  padding: 6px 12px;
+  background: var(--ds-blue);
+  color: white;
+  border: none;
+  border-radius: var(--ds-radius-200);
+  font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.confluence-header-button:hover {
+  background: var(--ds-blue-hover);
+}
+
+.confluence-header-icon {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--ds-radius-200);
+  cursor: pointer;
+  color: var(--ds-text);
+  transition: background 0.15s ease;
+}
+
+.confluence-header-icon:hover {
+  background: var(--ds-background-hover);
+}
+
+/* Page Content */
+.confluence-page-container {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--ds-space-400);
+}
+
+.confluence-page {
+  max-width: 900px;
+  margin: 0 auto;
+  background: var(--ds-background-neutral);
+  border-radius: var(--ds-radius-300);
+  padding: var(--ds-space-500);
+  box-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.confluence-page-header {
+  margin-bottom: var(--ds-space-400);
+}
+
+.confluence-page-title {
+  font-size: 32px;
+  font-weight: 500;
+  color: var(--ds-text-inverse);
+  margin: 0 0 var(--ds-space-200) 0;
+  line-height: 1.25;
+}
+
+.confluence-page-meta {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-200);
+  font-size: 14px;
+  color: var(--ds-text-subtle);
+}
+
+.confluence-page-author {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-100);
+}
+
+/* ADF Content Styles */
+.confluence-adf-content {
+  font-size: 14px;
+  line-height: 1.714;
+  color: var(--ds-text);
+}
+
+.confluence-adf-content h1 {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--ds-text-inverse);
+  margin: var(--ds-space-400) 0 var(--ds-space-200) 0;
+  line-height: 1.33;
+}
+
+.confluence-adf-content h2 {
+  font-size: 20px;
+  font-weight: 500;
+  color: var(--ds-text-inverse);
+  margin: var(--ds-space-300) 0 var(--ds-space-200) 0;
+  line-height: 1.4;
+}
+
+.confluence-adf-content h3 {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--ds-text-inverse);
+  margin: var(--ds-space-300) 0 var(--ds-space-150) 0;
+  line-height: 1.5;
+}
+
+.confluence-adf-content h4 {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ds-text-inverse);
+  margin: var(--ds-space-200) 0 var(--ds-space-100) 0;
+}
+
+.confluence-adf-content p {
+  margin: 0 0 var(--ds-space-200) 0;
+  color: var(--ds-text);
+}
+
+.confluence-adf-content ul,
+.confluence-adf-content ol {
+  margin: 0 0 var(--ds-space-200) 0;
+  padding-left: var(--ds-space-400);
+}
+
+.confluence-adf-content li {
+  margin: var(--ds-space-100) 0;
+  color: var(--ds-text);
+}
+
+.confluence-adf-content code {
+  background: var(--ds-background-subtle);
+  padding: 2px 6px;
+  border-radius: var(--ds-radius-100);
+  font-family: "SF Mono", "Monaco", "Inconsolata", "Fira Code", monospace;
+  font-size: 12px;
+  color: var(--ds-text-inverse);
+}
+
+.confluence-adf-content pre {
+  background: var(--ds-background-subtle);
+  border: 1px solid var(--ds-border);
+  padding: var(--ds-space-200);
+  border-radius: var(--ds-radius-200);
+  overflow-x: auto;
+  margin: var(--ds-space-200) 0;
+}
+
+.confluence-adf-content pre code {
+  background: none;
+  padding: 0;
+}
+
+.confluence-adf-content blockquote {
+  border-left: 3px solid var(--ds-border-bold);
+  padding-left: var(--ds-space-200);
+  margin: var(--ds-space-200) 0;
+  color: var(--ds-text-subtle);
+}
+
+.confluence-adf-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: var(--ds-space-200) 0;
+}
+
+.confluence-adf-content table th,
+.confluence-adf-content table td {
+  padding: var(--ds-space-100) var(--ds-space-200);
+  border: 1px solid var(--ds-border);
+  text-align: left;
+}
+
+.confluence-adf-content table th {
+  background: var(--ds-background-subtle);
+  font-weight: 600;
+  color: var(--ds-text-inverse);
+}
+
+.confluence-adf-content table td {
+  background: var(--ds-background-neutral);
+}
+
+/* Info Panel / Callout */
+.confluence-info-panel {
+  background: var(--ds-background-subtle);
+  border-left: 3px solid var(--ds-blue);
+  padding: var(--ds-space-200);
+  margin: var(--ds-space-200) 0;
+  border-radius: var(--ds-radius-200);
+}
+
+.confluence-info-panel-title {
+  font-weight: 600;
+  color: var(--ds-text-inverse);
+  margin-bottom: var(--ds-space-100);
+}
+
+/* Dashboard Styles */
+.confluence-dashboard {
+  padding: var(--ds-space-400);
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.confluence-dashboard-section {
+  margin-bottom: var(--ds-space-500);
+}
+
+.confluence-dashboard-title {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--ds-text-inverse);
+  margin-bottom: var(--ds-space-300);
+}
+
+.confluence-card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--ds-space-200);
+}
+
+.confluence-card {
+  background: var(--ds-background-neutral);
+  border: 1px solid var(--ds-border);
+  border-radius: var(--ds-radius-300);
+  padding: var(--ds-space-200);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.confluence-card:hover {
+  border-color: var(--ds-border-bold);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.confluence-card-title {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--ds-text-inverse);
+  margin-bottom: var(--ds-space-100);
+}
+
+.confluence-card-meta {
+  font-size: 12px;
+  color: var(--ds-text-subtle);
+}
+
+/* Whiteboard Styles */
+.confluence-whiteboard {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background: var(--ds-background-subtle);
+}
+
+.confluence-whiteboard-canvas {
+  position: absolute;
+  inset: 0;
+  cursor: crosshair;
+}
+
+.confluence-whiteboard-toolbar {
+  position: absolute;
+  bottom: var(--ds-space-300);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--ds-background-neutral);
+  border: 1px solid var(--ds-border);
+  border-radius: var(--ds-radius-300);
+  padding: var(--ds-space-100);
+  display: flex;
+  gap: var(--ds-space-100);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 100;
+}
+
+.confluence-whiteboard-tool {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: var(--ds-radius-200);
+  cursor: pointer;
+  color: var(--ds-text);
+  transition: background 0.15s ease;
+}
+
+.confluence-whiteboard-tool:hover {
+  background: var(--ds-background-hover);
+}
+
+.confluence-whiteboard-tool.active {
+  background: var(--ds-blue-bg);
+  color: var(--ds-blue);
+}
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--ds-background-default);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ds-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ds-border-bold);
+}

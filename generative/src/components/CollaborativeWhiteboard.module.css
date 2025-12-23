@@ -1,0 +1,184 @@
+.container {
+  background: var(--ds-surface);
+  border: 1px solid var(--ds-border);
+  border-radius: var(--ds-radius-200);
+  overflow: hidden;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--ds-space-150) var(--ds-space-200);
+  border-bottom: 1px solid var(--ds-border);
+}
+
+.title {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ds-text);
+}
+
+.collaborators {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-075);
+}
+
+.collaboratorDot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.7; }
+  50% { opacity: 1; }
+}
+
+.collaboratorCount {
+  font-size: 12px;
+  color: var(--ds-text-subtlest);
+  margin-left: var(--ds-space-050);
+}
+
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-050);
+  padding: var(--ds-space-100) var(--ds-space-200);
+  background: var(--ds-surface-sunken);
+  border-bottom: 1px solid var(--ds-border);
+}
+
+.tool {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  border-radius: var(--ds-radius-100);
+  color: var(--ds-icon);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.tool:hover {
+  background: var(--ds-surface-hovered);
+  color: var(--ds-text);
+}
+
+.tool.active {
+  background: var(--ds-background-selected);
+  color: var(--ds-icon-brand);
+}
+
+.toolDivider {
+  width: 1px;
+  height: 20px;
+  background: var(--ds-border);
+  margin: 0 var(--ds-space-050);
+}
+
+.canvas {
+  height: 400px;
+  background: var(--ds-surface-sunken);
+  background-image: 
+    radial-gradient(circle at center, var(--ds-border) 1px, transparent 1px);
+  background-size: 24px 24px;
+  position: relative;
+  overflow: hidden;
+  cursor: default;
+}
+
+/* Sticky Notes */
+.stickyNote {
+  position: absolute;
+  width: 140px;
+  min-height: 90px;
+  padding: var(--ds-space-125);
+  border-radius: var(--ds-radius-100);
+  font-size: 13px;
+  cursor: grab;
+  box-shadow: var(--ds-shadow-raised);
+  display: flex;
+  flex-direction: column;
+  user-select: none;
+}
+
+.stickyNote:active {
+  cursor: grabbing;
+}
+
+.note-yellow { 
+  background: #FFF7D6; 
+  color: #172B4D; 
+}
+.note-blue { 
+  background: #E9F2FF; 
+  color: #172B4D; 
+}
+.note-green { 
+  background: #DCFFF1; 
+  color: #172B4D; 
+}
+.note-purple { 
+  background: #F3F0FF; 
+  color: #172B4D; 
+}
+.note-pink { 
+  background: #FFECF8; 
+  color: #172B4D; 
+}
+
+.noteContent {
+  flex: 1;
+  line-height: 1.4;
+}
+
+.noteAuthor {
+  font-size: 11px;
+  font-weight: 600;
+  opacity: 0.6;
+  margin-top: var(--ds-space-075);
+}
+
+/* Collaborative Cursors */
+.cursor {
+  position: absolute;
+  pointer-events: none;
+  z-index: 1000;
+  transition: transform 0.05s linear;
+  will-change: transform;
+}
+
+.cursorLabel {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  padding: 2px 8px;
+  border-radius: var(--ds-radius-050);
+  font-size: 11px;
+  font-weight: 600;
+  color: white;
+  white-space: nowrap;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
+}
+
+.youIndicator {
+  position: absolute;
+  bottom: var(--ds-space-150);
+  left: 50%;
+  transform: translateX(-50%);
+  padding: var(--ds-space-075) var(--ds-space-150);
+  background: var(--ds-surface);
+  border: 1px solid var(--ds-border);
+  border-radius: var(--ds-radius-100);
+  font-size: 12px;
+  color: var(--ds-text-subtlest);
+  box-shadow: var(--ds-shadow-raised);
+}
+

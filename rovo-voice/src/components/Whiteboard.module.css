@@ -1,0 +1,348 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background: #F4F5F7;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: white;
+  border-bottom: 1px solid var(--ds-border);
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+
+.spaceName {
+  color: var(--ds-text-subtle);
+}
+
+.separator {
+  color: var(--ds-text-subtlest);
+}
+
+.pageTitle {
+  color: #172B4D;
+  font-weight: 500;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.collaboratorAvatars {
+  display: flex;
+  align-items: center;
+  margin-right: 8px;
+}
+
+.collaboratorAvatar {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 12px;
+  font-weight: 600;
+  margin-left: -8px;
+  border: 2px solid white;
+}
+
+.collaboratorAvatar:first-child {
+  margin-left: 0;
+}
+
+.moreCollaborators {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #DFE1E6;
+  color: #42526E;
+  font-size: 11px;
+  font-weight: 600;
+  margin-left: -8px;
+  border: 2px solid white;
+}
+
+.actionBtn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: #42526E;
+  border-radius: 4px;
+}
+
+.actionBtn:hover {
+  background: #EBECF0;
+}
+
+.shareBtn {
+  padding: 6px 12px;
+  background: #0052CC;
+  border: none;
+  color: white;
+  font-size: 14px;
+  font-weight: 500;
+  border-radius: 4px;
+}
+
+.shareBtn:hover {
+  background: #0065FF;
+}
+
+/* Canvas Area */
+.canvasWrapper {
+  flex: 1;
+  position: relative;
+  overflow: hidden;
+  background: 
+    radial-gradient(circle, #DFE1E6 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.columnHeaders {
+  position: absolute;
+  top: 16px;
+  left: 0;
+  right: 0;
+  display: flex;
+  pointer-events: none;
+  z-index: 10;
+}
+
+.columnHeader {
+  position: absolute;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: white;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.columnIcon {
+  font-size: 14px;
+}
+
+.columnTitle {
+  font-size: 14px;
+  font-weight: 500;
+  color: #172B4D;
+}
+
+.canvas {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.1s ease;
+}
+
+/* Sticky Notes */
+.stickyNote {
+  position: absolute;
+  width: 140px;
+  min-height: 80px;
+  padding: 12px;
+  border-radius: 2px;
+  box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.15);
+  cursor: grab;
+  user-select: none;
+  transition: transform 0.1s ease, box-shadow 0.1s ease;
+}
+
+.stickyNote:hover {
+  transform: scale(1.02);
+  box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.2);
+  z-index: 10;
+}
+
+.stickyNote:active {
+  cursor: grabbing;
+}
+
+.noteContent {
+  font-size: 13px;
+  color: #172B4D;
+  line-height: 1.4;
+  word-wrap: break-word;
+}
+
+.noteAuthor {
+  margin-top: 8px;
+  font-size: 11px;
+  color: #5E6C84;
+}
+
+/* Collaborative Cursors */
+.cursor {
+  position: absolute;
+  pointer-events: none;
+  z-index: 100;
+  transition: transform 0.05s linear;
+}
+
+.cursorLabel {
+  position: absolute;
+  left: 16px;
+  top: 16px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  color: white;
+  font-size: 11px;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+/* Bottom Toolbar */
+.toolbar {
+  position: absolute;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 8px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.15);
+}
+
+.tool {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: #42526E;
+  border-radius: 4px;
+}
+
+.tool:hover {
+  background: #EBECF0;
+}
+
+.tool.active {
+  background: #DEEBFF;
+  color: #0052CC;
+}
+
+.toolDivider {
+  width: 1px;
+  height: 24px;
+  background: #DFE1E6;
+  margin: 0 4px;
+}
+
+.colorTool {
+  width: auto;
+  padding: 0 12px;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.colorSwatch {
+  width: 16px;
+  height: 16px;
+  background: #FFEB3B;
+  border-radius: 2px;
+}
+
+.colorPicker {
+  width: 20px;
+  height: 20px;
+  background: linear-gradient(135deg, #FFEB3B 25%, #4FC3F7 25%, #4FC3F7 50%, #81C784 50%, #81C784 75%, #CE93D8 75%);
+  border-radius: 50%;
+}
+
+/* Right Sidebar */
+.rightSidebar {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 8px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.sidebarBtn {
+  width: 32px;
+  height: 32px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: #42526E;
+  border-radius: 4px;
+}
+
+.sidebarBtn:hover {
+  background: #EBECF0;
+}
+
+/* Zoom Controls */
+.zoomControls {
+  position: absolute;
+  right: 16px;
+  bottom: 24px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 8px;
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.zoomControls button {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: #42526E;
+  border-radius: 4px;
+}
+
+.zoomControls button:hover {
+  background: #EBECF0;
+}
+
+.zoomLevel {
+  font-size: 12px;
+  color: #42526E;
+  padding: 4px 0;
+}
+

@@ -1,0 +1,7 @@
+# Cloudflare Pages Configuration
+name = "generative"
+compatibility_date = "2024-01-01"
+account_id = "4ea3f61ea70acf45f8538ffefbc96b63"
+
+[site]
+bucket = "./dist"

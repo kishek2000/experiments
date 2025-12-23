@@ -1,0 +1,5 @@
+name = "rovo-voice"
+compatibility_date = "2024-01-01"
+pages_build_output_dir = "./dist"
+account_id = "c1353fd3f6fdc9801a02655240720316"
+

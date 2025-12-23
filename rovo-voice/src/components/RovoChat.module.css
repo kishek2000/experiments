@@ -1,0 +1,521 @@
+.sidebar {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: var(--rovo-sidebar-width);
+  height: 100vh;
+  background: var(--ds-surface-raised);
+  border-left: 1px solid var(--ds-border);
+  display: flex;
+  flex-direction: column;
+  z-index: 100;
+}
+
+/* Header */
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--ds-border);
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.rovoLogo {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #1868db;
+  color: white;
+  border-radius: 6px;
+  padding: 3px;
+}
+
+.rovoLogo svg {
+  width: 100%;
+  height: 100%;
+}
+
+.headerTitle {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--ds-text-inverse);
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.headerBtn {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: var(--ds-icon);
+  border-radius: 4px;
+}
+
+.headerBtn:hover {
+  background: var(--ds-background-neutral-hovered);
+  color: var(--ds-text-inverse);
+}
+
+/* Context Bar */
+.contextBar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  border-bottom: 1px solid var(--ds-border);
+}
+
+.contextLabel {
+  font-size: 12px;
+  color: var(--ds-text-subtle);
+}
+
+.contextBadge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 10px;
+  background: var(--ds-background-neutral);
+  border: 1px solid var(--ds-border);
+  border-radius: 4px;
+}
+
+.contextIcon {
+  font-size: 12px;
+}
+
+.contextTitle {
+  font-size: 13px;
+  color: var(--ds-text-brand);
+}
+
+/* Messages */
+.messages {
+  flex: 1;
+  overflow-y: auto;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.message {
+  display: flex;
+  gap: 12px;
+}
+
+.message.user {
+  flex-direction: row-reverse;
+}
+
+.assistantAvatar {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(
+    135deg,
+    var(--rovo-gradient-start),
+    var(--rovo-gradient-end)
+  );
+  color: white;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.messageContent {
+  max-width: 85%;
+}
+
+.message.user .messageContent {
+  background: var(--ds-background-brand-bold);
+  color: white;
+  padding: 10px 14px;
+  border-radius: 12px 12px 4px 12px;
+}
+
+.message.assistant .messageContent {
+  background: var(--ds-background-neutral);
+  padding: 12px 14px;
+  border-radius: 12px 12px 12px 4px;
+}
+
+.messageText {
+  font-size: 14px;
+  line-height: 1.5;
+  color: var(--ds-text);
+}
+
+.message.user .messageText {
+  color: white;
+}
+
+.messageText strong {
+  color: var(--ds-text-inverse);
+  font-weight: 600;
+}
+
+.message.user .messageText strong {
+  color: white;
+}
+
+/* Capture Preview */
+.capturePreview {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+  flex-wrap: wrap;
+}
+
+.captureThumbnail {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  font-size: 12px;
+}
+
+.moreCaptures {
+  font-size: 12px;
+  opacity: 0.8;
+}
+
+/* Processing Indicator */
+.processingIndicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ds-text-subtle);
+  font-size: 14px;
+}
+
+.processingDot {
+  width: 6px;
+  height: 6px;
+  background: var(--ds-text-brand);
+  border-radius: 50%;
+  animation: pulse 1.4s ease-in-out infinite;
+}
+
+.processingDot:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.processingDot:nth-child(3) {
+  animation-delay: 0.4s;
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(0.8);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Audio Preview */
+.audioPreview {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 16px;
+  background: var(--ds-background-neutral);
+  border-top: 1px solid var(--ds-border);
+}
+
+.audioPreviewLabel {
+  font-size: 13px;
+  color: var(--ds-text-subtle);
+  white-space: nowrap;
+}
+
+.audioPlayer {
+  flex: 1;
+  height: 32px;
+  min-width: 0;
+}
+
+.audioPlayer::-webkit-media-controls-panel {
+  background: var(--ds-background-input);
+}
+
+.clearAudioBtn {
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: var(--ds-icon);
+  border-radius: 4px;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.clearAudioBtn:hover {
+  background: var(--ds-background-neutral-hovered);
+  color: var(--ds-text-inverse);
+}
+
+/* Recording Bar */
+.recordingBar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  background: var(--ds-background-danger);
+  border-top: 1px solid rgba(255, 86, 48, 0.3);
+}
+
+.recordingIndicator {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.recordingPulse {
+  width: 10px;
+  height: 10px;
+  background: #ff5630;
+  border-radius: 50%;
+  animation: recordPulse 1s ease-in-out infinite;
+}
+
+@keyframes recordPulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.recordingTime {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ff5630;
+  font-variant-numeric: tabular-nums;
+}
+
+.recordingHint {
+  flex: 1;
+  font-size: 13px;
+  color: var(--ds-text);
+}
+
+.recordingHint kbd {
+  display: inline-block;
+  padding: 2px 6px;
+  background: var(--ds-background-neutral);
+  border: 1px solid var(--ds-border);
+  border-radius: 4px;
+  font-family: inherit;
+  font-size: 12px;
+}
+
+.capturingHint {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #36b37e;
+  font-weight: 500;
+}
+
+.stopBtn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  background: #ff5630;
+  border: none;
+  color: white;
+  font-size: 13px;
+  font-weight: 500;
+  border-radius: 4px;
+}
+
+.stopBtn:hover {
+  background: #ff7452;
+}
+
+/* Gesture Overlay */
+.gestureOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: var(--rovo-sidebar-width);
+  bottom: 0;
+  pointer-events: none;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.05);
+  border: 3px solid #36b37e;
+}
+
+.gestureSvg {
+  width: 100%;
+  height: 100%;
+}
+
+/* Input Area */
+.inputArea {
+  padding: 12px 16px;
+  border-top: 1px solid var(--ds-border);
+}
+
+.inputWrapper {
+  margin-bottom: 12px;
+}
+
+.input {
+  width: 100%;
+  padding: 10px 14px;
+  background: var(--ds-background-input);
+  border: 1px solid var(--ds-border);
+  border-radius: 8px;
+  color: var(--ds-text);
+  font-size: 14px;
+  outline: none;
+}
+
+.input:focus {
+  border-color: var(--ds-border-focused);
+}
+
+.input::placeholder {
+  color: var(--ds-text-subtlest);
+}
+
+.input:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.inputActions {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.inputBtn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: none;
+  color: var(--ds-icon);
+  border-radius: 6px;
+}
+
+.inputBtn:hover {
+  background: var(--ds-background-neutral-hovered);
+  color: var(--ds-text-inverse);
+}
+
+.micBtn {
+  background: linear-gradient(
+    135deg,
+    var(--rovo-gradient-start),
+    var(--rovo-gradient-end)
+  );
+  color: white;
+}
+
+.micBtn:hover {
+  opacity: 0.9;
+  color: white;
+}
+
+.micBtn.recording {
+  background: #ff5630;
+  animation: micPulse 1s ease-in-out infinite;
+}
+
+@keyframes micPulse {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 rgba(255, 86, 48, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(255, 86, 48, 0);
+  }
+}
+
+.sendBtn {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--ds-background-brand-bold);
+  border: none;
+  color: white;
+  border-radius: 6px;
+  margin-left: auto;
+}
+
+.sendBtn:hover:not(:disabled) {
+  background: var(--ds-background-brand-bold-hovered);
+}
+
+.sendBtn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Footer */
+.footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px 16px;
+  border-top: 1px solid var(--ds-border);
+}
+
+.footerText {
+  font-size: 11px;
+  color: var(--ds-text-subtlest);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.footerText::before {
+  content: "ℹ";
+  font-size: 12px;
+}
+
+.footerBrand {
+  font-size: 11px;
+  color: var(--ds-text-subtlest);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}

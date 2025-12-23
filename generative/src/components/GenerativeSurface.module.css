@@ -1,0 +1,388 @@
+.container {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  background: var(--ds-surface-sunken);
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--ds-space-200) var(--ds-space-400);
+  background: var(--ds-surface);
+  border-bottom: 1px solid var(--ds-border);
+  flex-shrink: 0;
+}
+
+.headerLeft {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-200);
+}
+
+.backButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: none;
+  border-radius: var(--ds-radius-100);
+  color: var(--ds-icon);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.backButton:hover {
+  background: var(--ds-surface-hovered);
+  transform: translateX(-2px);
+}
+
+.titleSection {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-150);
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--ds-text);
+  letter-spacing: -0.01em;
+}
+
+.surfaceType {
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 4px 10px;
+  border-radius: var(--ds-radius-100);
+  color: white;
+}
+
+.layoutBadge {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 11px;
+  font-weight: 500;
+  padding: 4px 10px;
+  background: var(--ds-background-neutral);
+  border-radius: var(--ds-radius-100);
+  color: var(--ds-text-subtlest);
+}
+
+.headerCenter {
+  display: flex;
+  align-items: center;
+}
+
+.collaborators {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--ds-radius-round);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+  color: white;
+  border: 2px solid var(--ds-surface);
+  margin-left: -10px;
+  transition: transform 0.15s ease;
+}
+
+.avatar:first-child {
+  margin-left: 0;
+}
+
+.avatar:hover {
+  transform: scale(1.1);
+  z-index: 10;
+}
+
+.inviteButton {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-075);
+  padding: var(--ds-space-100) var(--ds-space-200);
+  margin-left: var(--ds-space-150);
+  background: transparent;
+  border: 1px dashed var(--ds-border);
+  border-radius: var(--ds-radius-100);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ds-text-brand);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.inviteButton:hover {
+  background: var(--ds-background-selected);
+  border-style: solid;
+}
+
+.headerRight {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-075);
+}
+
+.iconButton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  background: transparent;
+  border: none;
+  border-radius: var(--ds-radius-100);
+  color: var(--ds-icon);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.iconButton:hover {
+  background: var(--ds-surface-hovered);
+}
+
+.iconButton.active {
+  background: var(--ds-background-success-bold);
+  color: white;
+}
+
+.main {
+  flex: 1;
+  display: flex;
+  overflow: hidden;
+}
+
+.surface {
+  flex: 1;
+  overflow-y: auto;
+  padding: var(--ds-space-400);
+}
+
+@media (max-width: 1400px) {
+  .surface {
+    padding: var(--ds-space-300);
+  }
+}
+
+.intentBanner {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-150);
+  padding: var(--ds-space-200) var(--ds-space-250);
+  background: linear-gradient(
+    135deg,
+    rgba(0, 82, 204, 0.06) 0%,
+    rgba(101, 84, 192, 0.06) 100%
+  );
+  border: 1px solid rgba(0, 82, 204, 0.1);
+  border-radius: var(--ds-radius-200);
+  margin-bottom: var(--ds-space-300);
+}
+
+.intentIcon {
+  color: var(--ds-icon-brand);
+  flex-shrink: 0;
+}
+
+.intentText {
+  flex: 1;
+  font-size: 14px;
+  color: var(--ds-text-subtle);
+  line-height: 1.5;
+}
+
+.intentText strong {
+  color: var(--ds-text);
+  font-weight: 600;
+}
+
+.refineButton {
+  font-size: 13px;
+  font-weight: 500;
+  padding: var(--ds-space-100) var(--ds-space-200);
+  background: transparent;
+  border: none;
+  border-radius: var(--ds-radius-100);
+  color: var(--ds-text-brand);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.refineButton:hover {
+  background: var(--ds-background-brand-bold);
+  color: white;
+}
+
+.connectedSystems {
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-100);
+  margin-bottom: var(--ds-space-300);
+  font-size: 12px;
+  color: var(--ds-text-subtlest);
+}
+
+.systemBadge {
+  padding: 4px 10px;
+  background: var(--ds-surface);
+  border: 1px solid var(--ds-border);
+  border-radius: var(--ds-radius-100);
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  font-weight: 600;
+  color: var(--ds-text-subtle);
+  transition: all 0.15s ease;
+}
+
+.systemBadge:hover {
+  border-color: var(--ds-border-bold);
+  background: var(--ds-surface-hovered);
+}
+
+/* Layout styles - SIMPLIFIED */
+.blocks {
+  display: flex;
+  flex-direction: column;
+  gap: var(--ds-space-300);
+  max-width: 1000px;
+}
+
+/* Stack layout - simple vertical stack */
+.stackLayout {
+  flex-direction: column;
+}
+
+/* Columns layout - simple vertical for now */
+.columnsLayout {
+  flex-direction: column;
+}
+
+/* Dashboard layout - 2x2 grid */
+.dashboardLayout {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--ds-space-300);
+}
+
+/* Split layout - sidebar + main */
+.splitLayout {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: var(--ds-space-300);
+}
+
+/* Tabs layout */
+.tabsLayout {
+  flex-direction: column;
+}
+
+/* Timeline layout */
+.timelineLayout {
+  flex-direction: column;
+}
+
+.suggestionBar {
+  position: fixed;
+  bottom: var(--ds-space-300);
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-200);
+  padding: var(--ds-space-200) var(--ds-space-300);
+  background: var(--ds-surface);
+  border: 1px solid var(--ds-border);
+  border-radius: var(--ds-radius-200);
+  box-shadow: var(--ds-shadow-overlay);
+  z-index: 100;
+  max-width: 600px;
+}
+
+.suggestionIcon {
+  color: var(--ds-icon-brand);
+  flex-shrink: 0;
+}
+
+.suggestionText {
+  flex: 1;
+  font-size: 14px;
+  color: var(--ds-text-subtle);
+  line-height: 1.4;
+}
+
+.suggestionActions {
+  display: flex;
+  gap: var(--ds-space-100);
+}
+
+.suggestionAction {
+  padding: var(--ds-space-100) var(--ds-space-200);
+  background: var(--ds-background-brand-bold);
+  border: none;
+  border-radius: var(--ds-radius-100);
+  font-size: 13px;
+  font-weight: 500;
+  color: white;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.suggestionAction:hover {
+  background: var(--ds-background-brand-bold-hovered);
+}
+
+.suggestionDismiss {
+  padding: var(--ds-space-100) var(--ds-space-200);
+  background: transparent;
+  border: none;
+  border-radius: var(--ds-radius-100);
+  font-size: 13px;
+  color: var(--ds-text-subtle);
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.suggestionDismiss:hover {
+  background: var(--ds-surface-hovered);
+}
+
+.showAgentsButton {
+  position: fixed;
+  right: var(--ds-space-300);
+  bottom: var(--ds-space-300);
+  display: flex;
+  align-items: center;
+  gap: var(--ds-space-100);
+  padding: var(--ds-space-150) var(--ds-space-250);
+  background: var(--ds-surface);
+  border: 1px solid var(--ds-border);
+  border-radius: var(--ds-radius-200);
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ds-text-subtle);
+  cursor: pointer;
+  box-shadow: var(--ds-shadow-raised);
+  transition: all 0.15s ease;
+  z-index: 99;
+}
+
+.showAgentsButton:hover {
+  background: var(--ds-surface-hovered);
+  box-shadow: var(--ds-shadow-overlay);
+}

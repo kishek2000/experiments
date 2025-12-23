@@ -1,0 +1,241 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* Atlassian Design System - Light Theme (Default) */
+:root {
+  /* Background colors */
+  --ds-surface: #FFFFFF;
+  --ds-surface-sunken: #F7F8F9;
+  --ds-surface-raised: #FFFFFF;
+  --ds-surface-overlay: #FFFFFF;
+  --ds-surface-hovered: #F1F2F4;
+  --ds-surface-pressed: #DCDFE4;
+  
+  /* Brand colors - Atlassian Blue */
+  --ds-background-brand-bold: #0052CC;
+  --ds-background-brand-bold-hovered: #0065FF;
+  --ds-background-brand-bold-pressed: #0747A6;
+  --ds-background-selected: #E9F2FF;
+  --ds-background-selected-bold: #0052CC;
+  
+  /* Semantic colors */
+  --ds-background-success: #DCFFF1;
+  --ds-background-success-bold: #1F845A;
+  --ds-background-warning: #FFF7D6;
+  --ds-background-warning-bold: #946F00;
+  --ds-background-danger: #FFEDEB;
+  --ds-background-danger-bold: #C9372C;
+  --ds-background-discovery: #F3F0FF;
+  --ds-background-discovery-bold: #6E5DC6;
+  --ds-background-information: #E9F2FF;
+  --ds-background-information-bold: #0052CC;
+  --ds-background-neutral: #F1F2F4;
+  --ds-background-neutral-hovered: #DCDFE4;
+  --ds-background-neutral-pressed: #B3B9C4;
+  
+  /* Text colors */
+  --ds-text: #172B4D;
+  --ds-text-subtle: #44546F;
+  --ds-text-subtlest: #626F86;
+  --ds-text-inverse: #FFFFFF;
+  --ds-text-brand: #0052CC;
+  --ds-text-success: #216E4E;
+  --ds-text-warning: #7F5F01;
+  --ds-text-danger: #AE2E24;
+  --ds-text-discovery: #5E4DB2;
+  --ds-text-information: #0055CC;
+  
+  /* Link colors */
+  --ds-link: #0052CC;
+  --ds-link-hovered: #0065FF;
+  --ds-link-pressed: #0747A6;
+  
+  /* Border colors */
+  --ds-border: #091E4224;
+  --ds-border-bold: #758195;
+  --ds-border-focused: #388BFF;
+  --ds-border-brand: #0052CC;
+  --ds-border-success: #22A06B;
+  --ds-border-warning: #B38600;
+  --ds-border-danger: #E2483D;
+  
+  /* Icon colors */
+  --ds-icon: #44546F;
+  --ds-icon-subtle: #626F86;
+  --ds-icon-brand: #0052CC;
+  --ds-icon-success: #22A06B;
+  --ds-icon-warning: #B38600;
+  --ds-icon-danger: #E2483D;
+  --ds-icon-discovery: #6E5DC6;
+  --ds-icon-information: #1D7AFC;
+  
+  /* Shadows */
+  --ds-shadow-raised: 0px 1px 1px #091E4240, 0px 0px 1px #091E424F;
+  --ds-shadow-overlay: 0px 8px 12px #091E4226, 0px 0px 1px #091E424F;
+  --ds-shadow-overflow: 0px 0px 12px #091E4226;
+  
+  /* Spacing - 8px base grid */
+  --ds-space-0: 0px;
+  --ds-space-025: 2px;
+  --ds-space-050: 4px;
+  --ds-space-075: 6px;
+  --ds-space-100: 8px;
+  --ds-space-150: 12px;
+  --ds-space-200: 16px;
+  --ds-space-250: 20px;
+  --ds-space-300: 24px;
+  --ds-space-400: 32px;
+  --ds-space-500: 40px;
+  --ds-space-600: 48px;
+  
+  /* Border radius */
+  --ds-radius-050: 2px;
+  --ds-radius-100: 3px;
+  --ds-radius-200: 8px;
+  --ds-radius-300: 12px;
+  --ds-radius-400: 16px;
+  --ds-radius-round: 50%;
+  
+  /* Typography */
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  line-height: 1.42857;
+  font-weight: 400;
+  color: var(--ds-text);
+  background-color: var(--ds-surface-sunken);
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
+  color-scheme: light;
+}
+
+/* Dark Theme */
+[data-theme="dark"] {
+  --ds-surface: #1D2125;
+  --ds-surface-sunken: #161A1D;
+  --ds-surface-raised: #22272B;
+  --ds-surface-overlay: #282E33;
+  --ds-surface-hovered: #38414A;
+  --ds-surface-pressed: #454F59;
+  
+  --ds-background-brand-bold: #579DFF;
+  --ds-background-brand-bold-hovered: #85B8FF;
+  --ds-background-brand-bold-pressed: #388BFF;
+  --ds-background-selected: #1C2B41;
+  --ds-background-selected-bold: #579DFF;
+  
+  --ds-background-success: #1F3D28;
+  --ds-background-success-bold: #4BCE97;
+  --ds-background-warning: #3D3222;
+  --ds-background-warning-bold: #F5CD47;
+  --ds-background-danger: #42221F;
+  --ds-background-danger-bold: #F87168;
+  --ds-background-discovery: #352C63;
+  --ds-background-discovery-bold: #9F8FEF;
+  --ds-background-information: #1C3349;
+  --ds-background-information-bold: #579DFF;
+  --ds-background-neutral: #2C333A;
+  --ds-background-neutral-hovered: #38414A;
+  --ds-background-neutral-pressed: #454F59;
+  
+  --ds-text: #B6C2CF;
+  --ds-text-subtle: #9FADBC;
+  --ds-text-subtlest: #8C9BAB;
+  --ds-text-inverse: #1D2125;
+  --ds-text-brand: #579DFF;
+  --ds-text-success: #4BCE97;
+  --ds-text-warning: #F5CD47;
+  --ds-text-danger: #F87168;
+  --ds-text-discovery: #9F8FEF;
+  --ds-text-information: #579DFF;
+  
+  --ds-link: #579DFF;
+  --ds-link-hovered: #85B8FF;
+  --ds-link-pressed: #388BFF;
+  
+  --ds-border: #A6C5E229;
+  --ds-border-bold: #738496;
+  --ds-border-focused: #579DFF;
+  --ds-border-brand: #579DFF;
+  --ds-border-success: #4BCE97;
+  --ds-border-warning: #F5CD47;
+  --ds-border-danger: #F87168;
+  
+  --ds-icon: #9FADBC;
+  --ds-icon-subtle: #8C9BAB;
+  --ds-icon-brand: #579DFF;
+  --ds-icon-success: #4BCE97;
+  --ds-icon-warning: #F5CD47;
+  --ds-icon-danger: #F87168;
+  --ds-icon-discovery: #9F8FEF;
+  --ds-icon-information: #579DFF;
+  
+  --ds-shadow-raised: 0px 1px 1px #03040480, 0px 0px 1px #03040480;
+  --ds-shadow-overlay: 0px 8px 12px #0304044F, 0px 0px 1px #03040480;
+  --ds-shadow-overflow: 0px 0px 12px #03040480;
+  
+  color-scheme: dark;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body, #root {
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+}
+
+body {
+  background-color: var(--ds-surface-sunken);
+  transition: background-color 0.2s ease;
+}
+
+::selection {
+  background: var(--ds-background-selected-bold);
+  color: var(--ds-text-inverse);
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--ds-border-bold);
+  border-radius: var(--ds-radius-100);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--ds-icon-subtle);
+}
+
+/* Focus styles - Atlassian uses blue focus ring */
+*:focus-visible {
+  outline: 2px solid var(--ds-border-focused);
+  outline-offset: 2px;
+}
+
+/* Button reset */
+button {
+  font-family: inherit;
+}
+
+/* Drag and drop styles */
+[data-dragging="true"] {
+  opacity: 0.5;
+}
+
+[data-drop-target="true"] {
+  outline: 2px solid var(--ds-border-focused);
+  outline-offset: -2px;
+}
