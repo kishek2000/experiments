@@ -74,12 +74,12 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <a
-                  href="#"
+                <Link
+                  to="/flights"
                   className="text-gray-300 hover:text-[#FC6603] transition-colors"
                 >
                   Flight Booking
-                </a>
+                </Link>
               </li>
             </ul>
           </div>
