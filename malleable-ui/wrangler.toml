@@ -1,0 +1,17 @@
+# Cloudflare Pages Configuration
+name = "malleable-ui"
+compatibility_date = "2024-01-01"
+pages_build_output_dir = "build/client"
+
+# Environment variables (optional - add your own)
+# [vars]
+# API_URL = "https://api.example.com"
+
+# Production environment
+[env.production]
+# Add production-specific settings here
+
+# Preview environment (for PR deployments)
+[env.preview]
+# Add preview-specific settings here
+
